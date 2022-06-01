@@ -1,0 +1,233 @@
+/* ---------------------- */
+/* Fonts                  */
+/* ---------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+/* ---------------------- */
+/* Custom properties      */
+/* ---------------------- */
+
+:root {
+  --clr-blue-light: #3e4560;
+  --clr-blue-very-dark: #1f2937;
+  --clr-yellow-light: #d6d5ac;
+  --ff-main: "Lato", sans-serif;
+}
+
+/* ---------------------- */
+/* Reset                  */
+/* ---------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+/* Make image easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------- */
+/* Typography             */
+/* ---------------------- */
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-blue-very-dark);
+}
+
+footer {
+  padding: 2em;
+}
+
+/* ---------------------- */
+/* Utility classes        */
+/* ---------------------- */
+
+/* general */
+.flex {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* shadows */
+.shadow-short {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 250ms;
+}
+
+.shadow-longer {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+.shadow-inner {
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.07);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.07);
+}
+
+/* Underline animation classes */
+
+.underline-animation {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-animation:hover,
+.underline-animation:focus {
+  color: black;
+}
+
+.underline-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-animation:hover::before,
+.underline-animation:focus::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ---------------------- */
+/* Buttons                */
+/* ---------------------- */
+
+/* ---------------------- */
+/* Components             */
+/* ---------------------- */
+.container {
+  font-family: var(--ff-main);
+  background-color: var(--clr-blue-light);
+  color: #fff;
+  padding: 1em 2em;
+  border-radius: 1em;
+  width: min(90%, 27rem);
+  margin: 2em;
+}
+
+.title {
+  text-align: center;
+  margin: 1em;
+  color: var(--clr-yellow-light);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 1em;
+}
+
+.box {
+  height: max(100px, 10em);
+  width: 100%;
+  background-color: var(--clr-yellow-light);
+  margin-bottom: 1em;
+  border-radius: 1em;
+}
+
+.container p {
+  margin-bottom: 0.5em;
+}
+
+/* footer */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+
+.attribution a {
+  font-family: var(--ff-main);
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
+}
+
+/* ---------------------- */
+/* Media queries          */
+/* ---------------------- */
+
+/* @media (min-width: 520px) {
+  
+} */

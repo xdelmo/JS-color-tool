@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
+    <title>Scrimba | Javascript color tool</title>
+</head>
+
+<body>
+    <main>
+        <div class="container shadow-short">
+            <h1 class="title">Color Lighten/Darken</h1>
+            <label for="hex">Color (Hex):</label>
+            <input type="text" name="hex" id="hexInput" placeholder="#000000">
+            <label for="slider" id="sliderText">0%</label>
+            <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider"></input>
+
+            <p>Input Color:</p>
+            <div class="box" id="inputColor"></div>
+            <p>Altered Color:</p>
+            <div class="box" id="alteredColor"></div>
+        </div>
+
+        <footer>
+            <div class="attribution">
+                <span> Project by <a href="https://scrimba.com/learn/learnjavascript/" target="_blank">Scrimba</a>.<br>
+                    Coded by <a href="https://github.com/xdelmo" target="_blank">Emanuele Del Monte</a>.</span>
+            </div>
+        </footer>
+
+        <script src="scripts/index.js"></script>
+</body>
+
+</html>
