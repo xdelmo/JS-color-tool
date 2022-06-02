@@ -14,15 +14,30 @@
 <body>
     <main>
         <div class="container shadow-short">
-            <h1 class="title">Color Lighten/Darken</h1>
-            <label for="hex">Color (Hex):</label>
-            <input type="text" name="hex" id="hexInput" placeholder="#000000">
-            <label for="slider" id="sliderText">0%</label>
-            <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider"></input>
+            <h1 class="title">Lighten or <span class="dark-text">Darken</span><br><span class="rainbowColors">your
+                    colors</span></h1>
+            <p class="subTitle">Never again without trendy colors.</p>
 
-            <p>Input Color:</p>
+            <div class="input">
+                <label for="hex">Color (Hex):</label>
+                <input type="text" name="hex" id="hexInput" placeholder="#000000" value="#d6d5ac">
+                <div class="toggle">
+                    <p id="lightenText" class="toggle-text">Lighten</p>
+                    <div id="toggleBtn" class="toggle-btn">
+                        <div class="inner-circle"></div>
+                    </div>
+                    <p id="darkenText" class="toggle-text unselected">Darken</p>
+                </div>
+                <label for="slider" id="sliderText">0%</label>
+                <input type="range" min="0" max="100" value="0" class="slider" id="slider" name="slider"></input>
+                <div id="resetBtn">Reset color</div>
+            </div>
+
+            <hr>
+
+            <p class="text-color">Input Color:</p>
             <div class="box" id="inputColor"></div>
-            <p>Altered Color:</p>
+            <p id="alteredColorText" class="text-color">Altered Color: #d6d5ac</p>
             <div class="box" id="alteredColor"></div>
         </div>
 

@@ -12,6 +12,9 @@
   --clr-blue-light: #3e4560;
   --clr-blue-very-dark: #1f2937;
   --clr-yellow-light: #d6d5ac;
+  --clr-grey-light: #8a8a8a;
+  /* --clr-bright-blue: #2196f3; */
+
   --ff-main: "Lato", sans-serif;
 }
 
@@ -48,6 +51,10 @@ p {
   font-weight: 400;
 }
 
+h1 {
+  letter-spacing: 1px;
+}
+
 /* Make image easier to work with */
 img,
 picture {
@@ -61,6 +68,12 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+hr {
+  height: 2px;
+  background-color: var(--clr-grey-light);
+  margin-block: 1em;
 }
 
 /* remove animations for people who've turned them off */
@@ -96,15 +109,6 @@ footer {
 /* ---------------------- */
 /* Utility classes        */
 /* ---------------------- */
-
-/* general */
-.flex {
-  display: flex;
-}
-
-.text-center {
-  text-align: center;
-}
 
 /* shadows */
 .shadow-short {
@@ -162,26 +166,69 @@ footer {
 /* Buttons                */
 /* ---------------------- */
 
+#resetBtn {
+  background-color: #fff;
+  color: var(--clr-blue-very-dark);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 250ms;
+}
+
+#resetBtn:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
 /* ---------------------- */
 /* Components             */
 /* ---------------------- */
+
 .container {
   font-family: var(--ff-main);
   background-color: var(--clr-blue-light);
   color: #fff;
   padding: 1em 2em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   width: min(90%, 27rem);
   margin: 2em;
 }
 
-.title {
-  text-align: center;
-  margin: 1em;
-  color: var(--clr-yellow-light);
-  text-transform: uppercase;
-  font-weight: 800;
+.input {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  border-radius: 0.5em;
 }
+
+.title {
+  margin: 1em 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dark-text {
+  color: var(--clr-blue-very-dark);
+}
+
+.rainbowColors {
+  color: #fff;
+  text-shadow: -0.04em 0.04em #ef3550, -0.08em 0.08em #f48fb1,
+    -0.12em 0.12em #7e57c2, -0.16em 0.16em #2196f3, -0.2em 0.2em #26c6da,
+    -0.24em 0.24em #43a047, -0.28em 0.28em #eeff41, -0.32em 0.32em #f9a825,
+    -0.36em 0.36em #ff5722;
+}
+
+.subTitle {
+  margin-top: 0.5em;
+  padding-bottom: 1em;
+  text-align: center;
+  color: #fff;
+}
+
 label {
   display: block;
   font-size: 1.2em;
@@ -195,19 +242,64 @@ input {
 input[type="text"] {
   padding: 0.5em 1em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 .box {
   height: max(100px, 10em);
   width: 100%;
   background-color: var(--clr-yellow-light);
+  border-radius: 0.5em;
   margin-bottom: 1em;
-  border-radius: 1em;
 }
 
-.container p {
+.text-color {
+  display: inline-block;
   margin-bottom: 0.5em;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  /* marging-bottom:1em; */
+  margin-bottom: 0.5em;
+}
+
+.toggle-text {
+  margin-bottom: 0;
+}
+
+.toggle-btn {
+  /* height: 40px;  */
+  width: 70px;
+  background-color: var(--clr-grey-light);
+  border-radius: 30px;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.inner-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  /* border: 1px solid #000; */
+  transition: all 250ms;
+}
+
+/* If element with class .toggle-btn has even .toggled as class, selects siblings with .inner-circle class */
+.toggle-btn.toggled > .inner-circle {
+  transform: translateX(30px);
+  background-color: var(--clr-blue-very-dark);
+}
+
+.unselected {
+  opacity: 0.25;
 }
 
 /* footer */
